@@ -1,33 +1,44 @@
 # Finance OS — Personal Finance Manager
 
-A mobile-first personal finance app built with React, TypeScript, Vite, IndexedDB and Recharts.
-
-## Included sections
-- **Overview:** tracked balance, monthly income and expenses, savings rate, six-month cash-flow chart, budget health, recent transactions and accounts.
-- **Transactions:** add, edit, delete, search and filter income/expenses.
-- **Accounts:** manage bank, cash, credit and other account balances.
-- **Budgets:** monthly category limits, spent amount, remaining balance and overspend warnings.
-- **Loans & EMIs:** principal, outstanding amount, monthly EMI, interest rate and next due date.
-- **Investments:** holdings, asset type, units, invested capital, current value and gain/loss.
-- **Reports:** cash-flow trends, category spending and budget performance.
-- **Settings:** JSON export/import, local-storage explanation and install-to-home-screen guide.
+A responsive, local-first personal finance workspace built with React, TypeScript, Vite, IndexedDB and Recharts.
 
 ## Run locally
-Requires Node.js 20.19+ or 22.12+.
+
+Requires Node.js 20.19+ or 22+.
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Build
+## Production build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-## Privacy and backup
-Records are stored in IndexedDB in this browser profile. There is no bank connection, cloud sync or payment processing. Export JSON backups regularly. Clearing browser data can erase local records. The app seeds illustrative sample records only when a corresponding store is empty. Existing transaction records from the first version are retained and their old account names are mapped to the new account IDs when loaded.
-
 ## GitHub Pages
-The included GitHub Actions workflow builds and deploys on pushes to `main`. Set repository Settings → Pages → Build and deployment → Source to GitHub Actions.
+
+The app is configured for the repository project path `/personal-finance-manager/`. GitHub Pages should use **GitHub Actions** as its deployment source. The workflow builds the app and publishes the `dist` folder.
+
+## Modules
+
+- Overview: tracked account balance, monthly cash flow, budget health, net worth snapshot and upcoming commitments.
+- Transactions: income, expenses, transfers, search and edit/delete.
+- Accounts: opening balances and ledger-driven balances.
+- Budgets: category limits and actual expense totals from transactions.
+- Recurring & Bills: bill, subscription and repeating-income reminders. Recording a due item creates a transaction; nothing is paid automatically.
+- Due Calendar: upcoming recurring dates and loan EMI reminders.
+- Loans & EMIs: balances, EMI commitments and approximate payoff estimates.
+- Investments: manual holdings and valuations.
+- Goals: savings targets and manual contribution progress.
+- Net Worth: accounts + investments + other assets − loans.
+- Reports: selected-month breakdown and CSV export.
+- Settings: JSON backup/restore and data controls.
+
+## Privacy and limitations
+
+All records stay in IndexedDB in the current browser profile. There is no bank, card, broker or lender connection; no automatic payments; no cloud sync; and no market-price feed. Investment valuations, asset estimates and loan outstanding amounts must be updated manually. Net worth can be double-counted if a liability is entered both as a negative account and as a loan; the app displays a reminder about this.
+
+Export JSON backups regularly. Clearing browser/site data can erase local records. For migration, use the in-app JSON export and import on the destination browser.
