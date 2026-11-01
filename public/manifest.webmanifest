@@ -1,1 +1,13 @@
-{"name":"Finance OS — Personal Finance Manager","short_name":"Finance OS","description":"Private, local-first personal finance manager","start_url":"./","scope":"./","display":"standalone","background_color":"#0b1020","theme_color":"#0b1020","orientation":"portrait-primary","icons":[{"src":"./icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "Finance OS — Ultimate Edition",
+  "short_name": "Finance OS",
+  "description": "Private personal finance workspace",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080d19",
+  "theme_color": "#080d19",
+  "icons": [
+    { "src": "./icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
