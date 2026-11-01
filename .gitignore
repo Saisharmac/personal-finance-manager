@@ -1,1 +1,5 @@
 node_modules\ndist\n*.local\n
+# Generated files
+node_modules/
+dist/
+*.tsbuildinfo
